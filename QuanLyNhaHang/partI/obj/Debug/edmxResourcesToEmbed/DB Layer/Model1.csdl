@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyNhaHangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="CheckTopManager_Result">
+    <Property Name="Service" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="DayRevenueReport_Result">
+    <Property Name="Total" Type="Int32" />
+    <Property Name="Time" Type="DateTime" />
+  </ComplexType>
+  <ComplexType Name="GetAccount_Result">
+    <Property Name="ID_Employee" Type="Int32" Nullable="false" />
+    <Property Name="User" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Pass" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetBill_Result">
+    <Property Name="ID_Bill" Type="Int32" Nullable="false" />
+    <Property Name="ID_Employee" Type="Int32" />
+    <Property Name="Time" Type="DateTime" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="GetBillOnTable_Result">
+    <Property Name="ID_Bill" Type="Int32" Nullable="false" />
+    <Property Name="ID_Employee" Type="Int32" />
+    <Property Name="Time" Type="DateTime" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="GetBillReport_Result">
+    <Property Name="ID_Bill" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="Location" Type="Int32" />
+    <Property Name="ID_Employee" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Time" Type="DateTime" />
+  </ComplexType>
+  <ComplexType Name="getCancelled_Result">
+    <Property Name="ID_Bill" Type="Int32" Nullable="false" />
+    <Property Name="ID_Food" Type="Int32" Nullable="false" />
+    <Property Name="ID_Employee" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="GetCancelledReport_Result">
+    <Property Name="ID_Bill" Type="Int32" Nullable="false" />
+    <Property Name="ID_Food" Type="Int32" Nullable="false" />
+    <Property Name="FoodName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="Sale" Type="Int32" />
+    <Property Name="Location" Type="Int32" />
+    <Property Name="ID_Employee" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Time" Type="DateTime" />
+    <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="GetDetailBill_Result">
+    <Property Name="ID_Bill" Type="Int32" Nullable="false" />
+    <Property Name="ID_Food" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="Sale" Type="Int32" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="ID_Employee" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="GetDetailBillReport_Result">
+    <Property Name="ID_Food" Type="Int32" Nullable="false" />
+    <Property Name="FoodName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_Employee" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="Sale" Type="Int32" />
+    <Property Name="Total" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="GetEmployee_Result">
+    <Property Name="ID_Employee" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Birth" Type="DateTime" />
+    <Property Name="Sex" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Service" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="Int32" />
+    <Property Name="DayToWork" Type="DateTime" />
+    <Property Name="Active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="GetFood_Result">
+    <Property Name="ID_Food" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Sale" Type="Int32" />
+    <Property Name="Active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Types" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="GetFoodOnDetailBill_Result">
+    <Property Name="ID_Bill" Type="Int32" Nullable="false" />
+    <Property Name="ID_Food" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="Sale" Type="Int32" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="ID_Employee" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="GetID_Bill_Result">
+    <Property Name="ID" Type="Int32" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetID_Employee_Result">
+    <Property Name="ID" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="GetTable_Result">
+    <Property Name="Location" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="LoadAccount_Result">
+    <Property Name="ID_Employee" Type="Int32" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="LoginCheck_Result">
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Service" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="MonthRevenueReport_Result">
+    <Property Name="Total" Type="Int32" />
+    <Property Name="MonthOfDate" Type="Int32" />
+    <Property Name="YearOfDate" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="TurnoverReport_Result">
+    <Property Name="ID_Food" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="TotalPrice" Type="Int32" />
+    <Property Name="TotalSale" Type="Int32" />
+  </ComplexType>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="ID_Employee" />
+      <PropertyRef Name="User" />
+    </Key>
+    <Property Name="ID_Employee" Type="Int32" Nullable="false" />
+    <Property Name="User" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Pass" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Account_Employees1" FromRole="Accounts" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="ID_Bill" />
+    </Key>
+    <Property Name="ID_Bill" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Employee" Type="Int32" />
+    <Property Name="Time" Type="DateTime" Precision="3" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Bill_Employees" FromRole="Bills" ToRole="Employees" />
+    <NavigationProperty Name="Table" Relationship="Self.FK_Bill_TableName" FromRole="Bills" ToRole="Tables" />
+    <NavigationProperty Name="Cancelleds" Relationship="Self.FK_Cancelled_Bill" FromRole="Bills" ToRole="Cancelled" />
+    <NavigationProperty Name="DetailBills" Relationship="Self.FK_DetailBill_Bill" FromRole="Bills" ToRole="DetailBill" />
+  </EntityType>
+  <EntityType Name="Cancelled">
+    <Key>
+      <PropertyRef Name="ID_Bill" />
+      <PropertyRef Name="ID_Food" />
+      <PropertyRef Name="ID_Employee" />
+    </Key>
+    <Property Name="ID_Bill" Type="Int32" Nullable="false" />
+    <Property Name="ID_Food" Type="Int32" Nullable="false" />
+    <Property Name="ID_Employee" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK_Cancelled_Bill" FromRole="Cancelled" ToRole="Bills" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Cancelled_Employees" FromRole="Cancelled" ToRole="Employees" />
+    <NavigationProperty Name="Food" Relationship="Self.FK_Cancelled_Food" FromRole="Cancelled" ToRole="Foods" />
+  </EntityType>
+  <EntityType Name="DetailBill">
+    <Key>
+      <PropertyRef Name="ID_Bill" />
+      <PropertyRef Name="ID_Food" />
+    </Key>
+    <Property Name="ID_Bill" Type="Int32" Nullable="false" />
+    <Property Name="ID_Food" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="Sale" Type="Int32" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="ID_Employee" Type="Int32" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK_DetailBill_Bill" FromRole="DetailBill" ToRole="Bills" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_DetailBill_Employees" FromRole="DetailBill" ToRole="Employees" />
+    <NavigationProperty Name="Food" Relationship="Self.FK_DetailBill_Food" FromRole="DetailBill" ToRole="Foods" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID_Employee" />
+    </Key>
+    <Property Name="ID_Employee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Birth" Type="DateTime" Precision="0" />
+    <Property Name="Sex" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Service" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="Int32" />
+    <Property Name="DayToWork" Type="DateTime" Precision="0" />
+    <Property Name="Active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Accounts" Relationship="Self.FK_Account_Employees1" FromRole="Employees" ToRole="Accounts" />
+    <NavigationProperty Name="Bills" Relationship="Self.FK_Bill_Employees" FromRole="Employees" ToRole="Bills" />
+    <NavigationProperty Name="Cancelleds" Relationship="Self.FK_Cancelled_Employees" FromRole="Employees" ToRole="Cancelled" />
+    <NavigationProperty Name="DetailBills" Relationship="Self.FK_DetailBill_Employees" FromRole="Employees" ToRole="DetailBill" />
+  </EntityType>
+  <EntityType Name="Food">
+    <Key>
+      <PropertyRef Name="ID_Food" />
+    </Key>
+    <Property Name="ID_Food" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Sale" Type="Int32" />
+    <Property Name="Active" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Types" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cancelleds" Relationship="Self.FK_Cancelled_Food" FromRole="Foods" ToRole="Cancelled" />
+    <NavigationProperty Name="DetailBills" Relationship="Self.FK_DetailBill_Food" FromRole="Foods" ToRole="DetailBill" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Location" />
+    </Key>
+    <Property Name="Location" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bills" Relationship="Self.FK_Bill_TableName" FromRole="Tables" ToRole="Bills" />
+  </EntityType>
+  <Association Name="FK_Account_Employees1">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Accounts" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="ID_Employee" />
+      </Principal>
+      <Dependent Role="Accounts">
+        <PropertyRef Name="ID_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Employees">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Bills" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="ID_Employee" />
+      </Principal>
+      <Dependent Role="Bills">
+        <PropertyRef Name="ID_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_TableName">
+    <End Role="Tables" Type="Self.Table" Multiplicity="0..1" />
+    <End Role="Bills" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="Location" />
+      </Principal>
+      <Dependent Role="Bills">
+        <PropertyRef Name="Location" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cancelled_Bill">
+    <End Role="Bills" Type="Self.Bill" Multiplicity="1" />
+    <End Role="Cancelled" Type="Self.Cancelled" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bills">
+        <PropertyRef Name="ID_Bill" />
+      </Principal>
+      <Dependent Role="Cancelled">
+        <PropertyRef Name="ID_Bill" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetailBill_Bill">
+    <End Role="Bills" Type="Self.Bill" Multiplicity="1" />
+    <End Role="DetailBill" Type="Self.DetailBill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bills">
+        <PropertyRef Name="ID_Bill" />
+      </Principal>
+      <Dependent Role="DetailBill">
+        <PropertyRef Name="ID_Bill" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cancelled_Employees">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Cancelled" Type="Self.Cancelled" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="ID_Employee" />
+      </Principal>
+      <Dependent Role="Cancelled">
+        <PropertyRef Name="ID_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cancelled_Food">
+    <End Role="Foods" Type="Self.Food" Multiplicity="1" />
+    <End Role="Cancelled" Type="Self.Cancelled" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Foods">
+        <PropertyRef Name="ID_Food" />
+      </Principal>
+      <Dependent Role="Cancelled">
+        <PropertyRef Name="ID_Food" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetailBill_Employees">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="DetailBill" Type="Self.DetailBill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="ID_Employee" />
+      </Principal>
+      <Dependent Role="DetailBill">
+        <PropertyRef Name="ID_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetailBill_Food">
+    <End Role="Foods" Type="Self.Food" Multiplicity="1" />
+    <End Role="DetailBill" Type="Self.DetailBill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Foods">
+        <PropertyRef Name="ID_Food" />
+      </Principal>
+      <Dependent Role="DetailBill">
+        <PropertyRef Name="ID_Food" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuanLyNhaHangEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Bills" EntityType="Self.Bill" />
+    <EntitySet Name="Cancelleds" EntityType="Self.Cancelled" />
+    <EntitySet Name="DetailBills" EntityType="Self.DetailBill" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Foods" EntityType="Self.Food" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Tables" EntityType="Self.Table" />
+    <AssociationSet Name="FK_Account_Employees1" Association="Self.FK_Account_Employees1">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Accounts" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Employees" Association="Self.FK_Bill_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Bills" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_TableName" Association="Self.FK_Bill_TableName">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="Bills" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cancelled_Bill" Association="Self.FK_Cancelled_Bill">
+      <End Role="Bills" EntitySet="Bills" />
+      <End Role="Cancelled" EntitySet="Cancelleds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetailBill_Bill" Association="Self.FK_DetailBill_Bill">
+      <End Role="Bills" EntitySet="Bills" />
+      <End Role="DetailBill" EntitySet="DetailBills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cancelled_Employees" Association="Self.FK_Cancelled_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Cancelled" EntitySet="Cancelleds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cancelled_Food" Association="Self.FK_Cancelled_Food">
+      <End Role="Foods" EntitySet="Foods" />
+      <End Role="Cancelled" EntitySet="Cancelleds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetailBill_Employees" Association="Self.FK_DetailBill_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="DetailBill" EntitySet="DetailBills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetailBill_Food" Association="Self.FK_DetailBill_Food">
+      <End Role="Foods" EntitySet="Foods" />
+      <End Role="DetailBill" EntitySet="DetailBills" />
+    </AssociationSet>
+    <FunctionImport Name="CheckTopManager" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.CheckTopManager_Result)">
+      <Parameter Name="idTopManager" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DayRevenueReport" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.DayRevenueReport_Result)">
+      <Parameter Name="start" Mode="In" Type="DateTime" />
+      <Parameter Name="end" Mode="In" Type="DateTime" />
+      <Parameter Name="status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetAccount" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.GetAccount_Result)">
+      <Parameter Name="ID_Employee" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetBill" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.GetBill_Result)" />
+    <FunctionImport Name="GetBillOnTable" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.GetBillOnTable_Result)">
+      <Parameter Name="Location" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetBillReport" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.GetBillReport_Result)">
+      <Parameter Name="start" Mode="In" Type="DateTime" />
+      <Parameter Name="end" Mode="In" Type="DateTime" />
+      <Parameter Name="status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="getCancelled" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.getCancelled_Result)" />
+    <FunctionImport Name="GetCancelledReport" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.GetCancelledReport_Result)">
+      <Parameter Name="start" Mode="In" Type="DateTime" />
+      <Parameter Name="end" Mode="In" Type="DateTime" />
+      <Parameter Name="status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetDetailBill" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.GetDetailBill_Result)">
+      <Parameter Name="ID_Bill" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetDetailBillReport" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.GetDetailBillReport_Result)">
+      <Parameter Name="id_bill" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetEmployee" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.GetEmployee_Result)">
+      <Parameter Name="active" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetFood" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.GetFood_Result)">
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="active" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetFoodOnDetailBill" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.GetFoodOnDetailBill_Result)">
+      <Parameter Name="ID_Bill" Mode="In" Type="Int32" />
+      <Parameter Name="ID_Food" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetID_Bill" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.GetID_Bill_Result)">
+      <Parameter Name="Location" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetID_Employee" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.GetID_Employee_Result)" />
+    <FunctionImport Name="GetTable" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.GetTable_Result)" />
+    <FunctionImport Name="LoadAccount" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.LoadAccount_Result)" />
+    <FunctionImport Name="LoginCheck" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.LoginCheck_Result)">
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="MonthRevenueReport" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.MonthRevenueReport_Result)">
+      <Parameter Name="start" Mode="In" Type="DateTime" />
+      <Parameter Name="end" Mode="In" Type="DateTime" />
+      <Parameter Name="status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TurnoverReport" IsComposable="true" ReturnType="Collection(QuanLyNhaHangModel.TurnoverReport_Result)">
+      <Parameter Name="start" Mode="In" Type="DateTime" />
+      <Parameter Name="end" Mode="In" Type="DateTime" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProcDeleteAccount">
+      <Parameter Name="ID_Employee" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcDeleteAllDetailBill">
+      <Parameter Name="ID_Bill" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcDeleteDetailBill">
+      <Parameter Name="ID_Bill" Mode="In" Type="Int32" />
+      <Parameter Name="ID_Food" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcInsertAccount">
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+      <Parameter Name="ID_Employee" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcInsertBill">
+      <Parameter Name="ID_Employee" Mode="In" Type="Int32" />
+      <Parameter Name="Time" Mode="In" Type="DateTime" />
+      <Parameter Name="Total" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="Location" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcInsertCancelled">
+      <Parameter Name="ID_Bill" Mode="In" Type="Int32" />
+      <Parameter Name="ID_Food" Mode="In" Type="Int32" />
+      <Parameter Name="ID_Employee" Mode="In" Type="Int32" />
+      <Parameter Name="Amount" Mode="In" Type="Int32" />
+      <Parameter Name="Reason" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProcInsertDetailBill">
+      <Parameter Name="ID_Bill" Mode="In" Type="Int32" />
+      <Parameter Name="ID_Food" Mode="In" Type="Int32" />
+      <Parameter Name="Amount" Mode="In" Type="Int32" />
+      <Parameter Name="Sale" Mode="In" Type="Int32" />
+      <Parameter Name="Price" Mode="In" Type="Int32" />
+      <Parameter Name="ID_Employee" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcInsertEmployee" ReturnType="Collection(Int32)">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="ID_Code" Mode="In" Type="String" />
+      <Parameter Name="Birth" Mode="In" Type="DateTime" />
+      <Parameter Name="Sex" Mode="In" Type="String" />
+      <Parameter Name="Service" Mode="In" Type="String" />
+      <Parameter Name="Salary" Mode="In" Type="Int32" />
+      <Parameter Name="Day" Mode="In" Type="DateTime" />
+      <Parameter Name="Active" Mode="In" Type="String" />
+      <Parameter Name="PhoneNumber" Mode="In" Type="Int32" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProcInsertFoodAndGetInsertedFood">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="price" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="sale" Mode="In" Type="Int32" />
+      <Parameter Name="active" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="String" />
+      <Parameter Name="id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcUpdateAccount">
+      <Parameter Name="user" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+      <Parameter Name="ID_Employee" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcUpdateBill">
+      <Parameter Name="ID_Bill" Mode="In" Type="Int32" />
+      <Parameter Name="ID_Employee" Mode="In" Type="Int32" />
+      <Parameter Name="Time" Mode="In" Type="DateTime" />
+      <Parameter Name="Total" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProcUpdateCancelled">
+      <Parameter Name="ID_Bill" Mode="In" Type="Int32" />
+      <Parameter Name="ID_Food" Mode="In" Type="Int32" />
+      <Parameter Name="ID_Employee" Mode="In" Type="Int32" />
+      <Parameter Name="Amount" Mode="In" Type="Int32" />
+      <Parameter Name="Reason" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProcUpdateDetailBill">
+      <Parameter Name="ID_Bill" Mode="In" Type="Int32" />
+      <Parameter Name="ID_Food" Mode="In" Type="Int32" />
+      <Parameter Name="Amount" Mode="In" Type="Int32" />
+      <Parameter Name="Sale" Mode="In" Type="Int32" />
+      <Parameter Name="Price" Mode="In" Type="Int32" />
+      <Parameter Name="ID_Employee" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProcUpdateEmployee">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="ID_Code" Mode="In" Type="String" />
+      <Parameter Name="birth" Mode="In" Type="DateTime" />
+      <Parameter Name="sex" Mode="In" Type="String" />
+      <Parameter Name="service" Mode="In" Type="String" />
+      <Parameter Name="salary" Mode="In" Type="Int32" />
+      <Parameter Name="day" Mode="In" Type="DateTime" />
+      <Parameter Name="phone" Mode="In" Type="Int32" />
+      <Parameter Name="address" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProcUpdateFood">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="price" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="sale" Mode="In" Type="Int32" />
+      <Parameter Name="active" Mode="In" Type="String" />
+      <Parameter Name="type" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProcUpdateStatus">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="active" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProcUpdateTable">
+      <Parameter Name="location" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b4f9d5364eae47939bb5829eaae74176" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.Account" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.Bill" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.Cancelled" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.DetailBill" Width="1.5" PointX="11.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.Employee" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.Food" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.sysdiagram" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyNhaHangModel.Table" Width="1.5" PointX="3.75" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyNhaHangModel.FK_Account_Employees1" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyNhaHangModel.FK_Bill_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyNhaHangModel.FK_Bill_TableName" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyNhaHangModel.FK_Cancelled_Bill" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyNhaHangModel.FK_DetailBill_Bill" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyNhaHangModel.FK_Cancelled_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyNhaHangModel.FK_Cancelled_Food" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyNhaHangModel.FK_DetailBill_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyNhaHangModel.FK_DetailBill_Food" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
